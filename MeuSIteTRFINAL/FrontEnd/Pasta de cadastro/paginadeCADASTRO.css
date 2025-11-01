@@ -59,3 +59,24 @@ input{
     cursor: pointer;
     transition: all 0.5s ease-in-out
 }
+#barradeFORCA{
+width:200px; 
+height:10px; 
+background:#ccc;
+border-radius:5px; 
+margin-top:10px;
+transition: all;
+}
+#barraINTERNA{
+height:10px; 
+width:0%; 
+border-radius:5px;
+transition: all 0.9s ease-in-out, width 0.3s linear 0.1s;
+}
+#textoFORCA{
+    font-weight:bold;
+    transition: all 0.5s ease-in-out, width 0.3s linear 0.1s;
+}
+#fazercadastro{
+    
+}
