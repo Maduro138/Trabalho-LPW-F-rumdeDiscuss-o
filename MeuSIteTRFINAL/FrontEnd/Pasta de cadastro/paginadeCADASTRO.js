@@ -104,9 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             const resultado = await response.text();
-            
+            let numerodeusuarios=0;
             if (response.ok) {
                 alert(resultado);
+                numerodeusuarios++;
                 window.location.href = "../Pasta de login/paginadeLOGIN.html";
             } else {
                 alert("Erro no cadastro: " + resultado);

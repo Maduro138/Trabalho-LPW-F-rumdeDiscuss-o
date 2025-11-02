@@ -1,10 +1,17 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
-const Bemvindo = document.getElementById("Usuario")
+let Bemvindo = document.getElementById("Bemvindo")
 const nomedousuario = localStorage.getItem("nomedousuario")
 
-Bemvindo.innerHTML=`${nomedousuario}`
+if (Bemvindo) {
+    Bemvindo.innerHTML = 'Bem vindo '+`${nomedousuario}`+ ' :)'
 
+}
+else if(Bemvindo=== "null" ){
+    Bemvindo.innerHTML = 'Bem vindo (a) :)'
+}
+else{
 
+}
 })
 

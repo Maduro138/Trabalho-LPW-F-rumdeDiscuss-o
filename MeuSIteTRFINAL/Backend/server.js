@@ -11,11 +11,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Cria tabela de usuários, se não existir
+
 db.run(`CREATE TABLE IF NOT EXISTS usuarios (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT,
-    email TEXT UNIQUE,
-    senha TEXT
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ nome TEXT,
+ email TEXT UNIQUE,
+ senha TEXT,
+ role TEXT DEFAULT 'user' 
 )`);
 
 // Rota de cadastro
@@ -35,30 +37,73 @@ app.post('/register', async (req, res) => {
 });
 
 // Rota de login
-app.post('/login', (req, res) => {
+const jwt = require("jsonwebtoken");
+const SECRET = "segredoSuperSeguro123"; 
+
+app.post("/login", (req, res) => {
     const { email, senha } = req.body;
-    if (!email || !senha) 
-        return res.status(400).json({ success: false, message: 'Preencha todos os campos' });
 
-    db.get('SELECT * FROM usuarios WHERE email = ?', [email], async (err, user) => {
-        if (err) 
-            return res.status(500).json({ success: false, message: 'Erro no servidor' });
-        if (!user) 
-            return res.status(400).json({ success: false, message: 'Usuário não encontrado' });
+    db.get("SELECT * FROM usuarios WHERE email = ?", [email], (err, row) => {
+        if (err) return res.status(500).json({ erro: err.message });
+        if (!row) return res.status(401).json({ erro: "Usuário não encontrado" });
 
-        const senhaCorreta = await bcrypt.compare(senha, user.senha);
-        if (!senhaCorreta) 
-            return res.status(400).json({ success: false, message: 'Senha incorreta' });
+        bcrypt.compare(senha, row.senha, (err, resultado) => {
+            if (!resultado) return res.status(401).json({ erro: "Senha inválida" });
 
-        res.json({ success: true, message: 'Login realizado com sucesso!', nome: user.nome });
+            // aqui gera token
+            const token = jwt.sign({ id: row.id, email: row.email, role: row.role }, SECRET, {
+                expiresIn: "2h"
+            });
+
+            res.json({ 
+              mensagem: "Login OK", 
+                token: token,
+                 nome: row.nome, 
+                   role: row.role 
+                });
+        });
     });
 });
+//Rota adm
+function autenticarToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // formato: Bearer token
 
-app.get('/usuarios', (req, res) => {
-    db.all("SELECT id, nome, email FROM usuarios", (err, rows) => {
+    if (!token) return res.status(401).json({ erro: 'Token não fornecido' });
+
+    jwt.verify(token, SECRET, (err, user) => {
+        if (err) return res.status(403).json({ erro: 'Token inválido' });
+        req.user = user;
+        next();
+    });
+}
+
+function somenteAdmin(req, res, next) {
+    if (req.user.role !== 'admin') return res.status(403).json({ erro: "Apenas administradores podem acessar" });
+    next();
+}
+
+
+
+//Rota para ver os usuários
+app.get('/usuarios', autenticarToken, somenteAdmin, (_req, res) => {
+    db.all("SELECT id, nome, email, role FROM usuarios", (err, rows) => {
         if (err) return res.status(500).send("Erro ao buscar usuários");
         res.json(rows);
     });
 });
+//Rota para apagar usuarios
+app.delete('/usuario/:id', autenticarToken, somenteAdmin, (req, res) => {
+    const { id } = req.params;
+
+    db.run("DELETE FROM usuarios WHERE id = ?", [id], function(err){
+        if(err) return res.status(500).send("Erro ao deletar usuário");
+        if(this.changes === 0) return res.status(404).send("Usuário não encontrado");
+
+        res.send("Usuário apagado com sucesso!");
+    });
+});
+
+db.run("UPDATE usuarios SET role = 'admin' WHERE email = 'arthur12maduro@gmail.com'");
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
