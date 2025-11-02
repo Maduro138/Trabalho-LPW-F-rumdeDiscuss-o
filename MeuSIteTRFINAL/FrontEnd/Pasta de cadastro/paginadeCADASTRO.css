@@ -80,3 +80,12 @@ transition: all 0.9s ease-in-out, width 0.3s linear 0.1s;
 #fazercadastro{
     
 }
+#linkpraLOGIN{
+    text-decoration: none;
+    color: rgb(192, 160, 119);
+    transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#linkpraLOGIN:hover{
+    text-decoration: underline;
+    transform: scale(1.2);
+}

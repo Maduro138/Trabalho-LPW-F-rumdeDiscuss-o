@@ -1,19 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- 1. DECLARAÇÃO DE VARIÁVEIS ---
-    // (Adicionamos nomeInput, emailInput, e textoFORCA aqui)
     const form = document.querySelector("form");
-    const nomeInput = document.getElementById("nome"); // <-- Faltava
-    const emailInput = document.getElementById("email"); // <-- Faltava
+    const nomeInput = document.getElementById("nome"); 
+    const emailInput = document.getElementById("email"); 
     const senhaInput = document.getElementById("senha");
     const senhaCONFIRMADA = document.getElementById("senhaCONFIRMADA");
     const botaodelogin = document.getElementById("botaodelogin");
     const paragrafodasenha = document.getElementById("paragrafodasenha");
     const barraINTERNA = document.getElementById("barraINTERNA");
-    const textoFORCA = document.getElementById("textoFORCA"); // <-- Faltava
+    const textoFORCA = document.getElementById("textoFORCA"); 
 
-    // --- 2. FUNÇÕES DE VALIDAÇÃO (SEU CÓDIGO ORIGINAL) ---
-    // (Seu código de validarSenhaRequisitos, calcularNIVELDESENHA, etc. entra aqui)
-    // ... (Vou omitir por brevidade, mas o seu estava ótimo) ...
+
 
     function validarSenhaRequisitos(senha){
     const requisitos = {
@@ -72,17 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
  barraINTERNA.style.backgroundColor = 'green'
  }
         
-        // CORRIGIDO: Escreve a força no <p> separado
+       
    textoFORCA.innerHTML = "Força:  " + nivel 
   return valido
     }
 
-    // --- 3. EVENT LISTENERS ---
+    // Eventos
     senhaInput.addEventListener("input", validarSenha);
     senhaCONFIRMADA.addEventListener("input", validarSenha);
 
-    // --- 4. ENVIO DO FORMULÁRIO (SUBMIT) ---
-    // (Este é o bloco que você colou, agora DENTRO do wrapper)
+   //Envia o formulário
+
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
@@ -91,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Agora 'nomeInput' e 'emailInput' existem
+
         const dados = {
             nome: nomeInput.value,
             email: emailInput.value,

@@ -12,29 +12,29 @@
     <div id="Centro" > <h1>Bem vindo!</h1>
         <form  action="http://localhost:3000/register" > <!-- action="ADICIONAR PAGINA QUE RECEBERÁ DADOS"> -->
     <h1>Por favor, digite algumas informações:</h1>
-    <label for="nome">Nome de usuário:
-    <input type="text" name="nome" id="nome" placeholder="Nome">
+    <label for="nome">Nome de usuário: (Máx. 15 letras)
+    <input type="text" name="nome" id="nome" placeholder="Nome" required maxlength="15">
     </label>
 
 
     <label for="email">Email:
-    <input type="text" name="email" id="email" placeholder="Ex.: pedro123@gmail.com">
+    <input type="text" name="email" id="email" placeholder="Ex.: pedro123@gmail.com" required>
     </label>
 
    <!-- adicionar sistema de cadastro e login, mas isso é com backend -->
     <label for="senha">Senha:
-    <input type="password" name="senha" id="senha" placeholder="Senha">
+    <input type="password" name="senha" id="senha" placeholder="Senha" required>
     </label>
 
      <label for="senha">Confirme sua senha:
-    <input type="password" name="senhaCONFIRMADA" id="senhaCONFIRMADA" placeholder="Confirme a senha">
+    <input type="password" name="senhaCONFIRMADA" id="senhaCONFIRMADA" placeholder="Confirme a senha" required>
     <p id="paragrafodasenha"></p>
 
     <div id="barradeFORCA">
         <div id="barraINTERNA"></div>        
     </div>
     <p id="textoFORCA" ></p>
-    <p id="fazercadastro" >Já tem um cadastro? Faça seu login<a href="../Pasta de login/paginadeLOGIN.html"> agora mesmo!</a></p>
+    <p id="fazercadastro" >Já tem um cadastro? Faça seu login <a id="linkpraLOGIN" href="../Pasta de login/paginadeLOGIN.html"> agora mesmo!</a></p>
     </label>
     <button type="submit"  id="botaodelogin">Criar usuário</button>
 <!-- Adicionar o submit ao botão do form, mas isso é para o backend já...       type="submit"  -->

@@ -10,7 +10,7 @@ const db = new sqlite3.Database('./database.db');
 app.use(bodyParser.json());
 app.use(cors());
 
-// Criar tabela de usuários se não existir
+// Cria tabela de usuários, se não existir
 db.run(`CREATE TABLE IF NOT EXISTS usuarios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT,
@@ -37,16 +37,27 @@ app.post('/register', async (req, res) => {
 // Rota de login
 app.post('/login', (req, res) => {
     const { email, senha } = req.body;
-    if (!email || !senha) return res.status(400).send('Preencha todos os campos');
+    if (!email || !senha) 
+        return res.status(400).json({ success: false, message: 'Preencha todos os campos' });
 
     db.get('SELECT * FROM usuarios WHERE email = ?', [email], async (err, user) => {
-        if (err) return res.status(500).send('Erro no servidor');
-        if (!user) return res.status(400).send('Usuário não encontrado');
+        if (err) 
+            return res.status(500).json({ success: false, message: 'Erro no servidor' });
+        if (!user) 
+            return res.status(400).json({ success: false, message: 'Usuário não encontrado' });
 
         const senhaCorreta = await bcrypt.compare(senha, user.senha);
-        if (!senhaCorreta) return res.status(400).send('Senha incorreta');
+        if (!senhaCorreta) 
+            return res.status(400).json({ success: false, message: 'Senha incorreta' });
 
-        res.send('Login realizado com sucesso!');
+        res.json({ success: true, message: 'Login realizado com sucesso!', nome: user.nome });
+    });
+});
+
+app.get('/usuarios', (req, res) => {
+    db.all("SELECT id, nome, email FROM usuarios", (err, rows) => {
+        if (err) return res.status(500).send("Erro ao buscar usuários");
+        res.json(rows);
     });
 });
 
