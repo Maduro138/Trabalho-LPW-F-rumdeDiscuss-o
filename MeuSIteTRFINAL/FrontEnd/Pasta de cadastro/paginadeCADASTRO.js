@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const paragrafodasenha = document.getElementById("paragrafodasenha");
     const barraINTERNA = document.getElementById("barraINTERNA");
     const textoFORCA = document.getElementById("textoFORCA"); 
+    const botaoMostrarSenha = document.getElementById("mostrarSenha");
+    const botaoMostrarConfirmacao = document.getElementById("mostrarConfirmacao");
 
 
 
@@ -119,4 +121,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-}); 
+    function alternarVisibilidade(inputEl, botaoEl) {
+    if (!inputEl || !botaoEl) return;
+    const mostrar = inputEl.type === "password";
+    inputEl.type = mostrar ? "text" : "password";
+    botaoEl.textContent = mostrar ? "Ocultar" : "Mostrar";
+    botaoEl.setAttribute("aria-pressed", mostrar ? "true" : "false");
+  }
+
+  if (botaoMostrarSenha) {
+    botaoMostrarSenha.addEventListener("click", () => alternarVisibilidade(senhaInput, botaoMostrarSenha));
+    botaoMostrarSenha.textContent = "Mostrar";
+    botaoMostrarSenha.setAttribute("aria-pressed", "false");
+  }
+
+  if (botaoMostrarConfirmacao) {
+    botaoMostrarConfirmacao.addEventListener("click", () => alternarVisibilidade(senhaCONFIRMADA, botaoMostrarConfirmacao));
+    botaoMostrarConfirmacao.textContent = "Mostrar";
+    botaoMostrarConfirmacao.setAttribute("aria-pressed", "false");
+  };
+
+});
