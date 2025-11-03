@@ -60,7 +60,7 @@ app.post("/login", (req, res) => {
         console.log("ROLE DO USUARIO:", row.role);
 
 
-        bcrypt.compare(senha, row.senha, (err, resultado) => {
+        bcrypt.compare(senha, row.senha, (_err, resultado) => {
             if (!resultado) return res.status(401).json({ erro: "Senha inválida" });
 
             // aqui gera token

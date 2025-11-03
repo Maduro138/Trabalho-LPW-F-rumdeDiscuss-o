@@ -1,0 +1,11 @@
+#lista-usuarios{
+    text-align: center;
+    background-color: white;
+}
+body{
+    background-color: rgb(80, 62, 48) ;
+}
+li{
+    padding-bottom:30px;
+    padding-top: 30px;
+}
