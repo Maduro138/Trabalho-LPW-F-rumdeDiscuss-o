@@ -1,15 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="paginaINICIAL.css">
-    <title>Página Inicial</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aprenda C — Portal</title>
+  <link rel="stylesheet" href="paginaINICIAL.css">
 </head>
 <body>
-    <h1> <strong>Página que o usuario será direcionado após o login/cadastro </strong> </h1>
-    <h1 id="Bemvindo"></h1>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">C</div>
+        <h2>Portal C — Básico ao Avançado</h2>
+      </div>
+      <nav>
+        <a href="#home" class="navlink active" data-target="home">Início</a>
+        <a href="#tutorial" class="navlink" data-target="tutorial">Tutorial Rápido</a>
+        <a href="#exemplos" class="navlink" data-target="exemplos">Exemplos</a>
+        <a href="#referencia" class="navlink" data-target="referencia">Referência</a>
+        <a href="#login" class="navlink" data-target="login">Login</a>
+      </nav>
+      <div class="card tip">
+        <strong>Dica:</strong>
+        <p>Use o painel à direita para ler conteúdo, copiar exemplos e testar localmente.</p>
+      </div>
+    </aside>
 
-    <script src="paginaINICIAL.js"></script>
+    <main class="main">
+      <header class="mainhead">
+        <div>
+          <h1>Aprenda C</h1>
+          <p>Entenda a linguagem C com exemplos claros e exercícios práticos.</p>
+        </div>
+        <div>
+          <small>Temática: estética do seu login — cartão marrom sobre fundo roxo</small>
+        </div>
+      </header>
+
+      <section id="home" class="active-section">
+        <div class="card">
+          <h3>O que é C?</h3>
+          <p>C é uma linguagem de programação de propósito geral, criada nos anos 70. É rápida, próxima ao hardware e é a base para muitas outras linguagens.</p>
+        </div>
+
+        <div class="card">
+          <h3>Por que aprender C?</h3>
+          <ul>
+            <li>Controle baixo de memória (ponteiros).</li>
+            <li>Base para sistemas operacionais, compiladores e embarcados.</li>
+            <li>Excelente para aprender conceitos fundamentais.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tutorial" style="display:none">
+        <div class="card">
+          <h3>Estrutura mínima de um programa em C</h3>
+          <pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Olá, mundo!\n");
+    return 0;
+}</code></pre>
+          <p>Salve em <code>ola.c</code> e compile com <code>gcc ola.c -o ola</code>.</p>
+        </div>
+
+        <div class="card">
+          <h3>Variáveis e Tipos</h3>
+          <pre><code>int idade = 20;
+float nota = 8.5;
+char letra = 'A';</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>Ponteiros (exemplo básico)</h3>
+          <pre><code>int x = 10;
+int *p = &x;
+printf("x = %d, *p = %d\n", x, *p);</code></pre>
+        </div>
+      </section>
+
+      <section id="exemplos" style="display:none">
+        <div class="card">
+          <h3>Exemplo: função que soma dois números</h3>
+          <pre><code>#include &lt;stdio.h&gt;
+
+int soma(int a, int b) {
+    return a + b;
+}
+
+int main(void) {
+    printf("3 + 4 = %d\n", soma(3,4));
+    return 0;
+}</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>Exemplo: alocação dinâmica</h3>
+          <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void){
+    int n = 5;
+    int *v = malloc(n * sizeof(int));
+    if(!v) return 1;
+    for(int i=0;i<n;i++) v[i] = i*i;
+    free(v);
+    return 0;
+}</code></pre>
+        </div>
+      </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="paginaINICIAL.js"></script>
 </body>
 </html>
