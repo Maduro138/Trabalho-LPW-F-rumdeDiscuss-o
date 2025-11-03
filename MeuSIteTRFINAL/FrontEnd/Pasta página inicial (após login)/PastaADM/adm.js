@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // se não tiver token, manda o usuário de volta para o login
     if (!token) {
         alert("Acesso negado. Faça login como administrador.");
-        window.location.href = "../PáginaINICIAL.html"; // Ajuste o caminho
+        window.location.href = "../PáginaINICIAL.html"; 
         return;
     }
 

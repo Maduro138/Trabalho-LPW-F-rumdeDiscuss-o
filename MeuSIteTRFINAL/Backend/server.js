@@ -7,18 +7,29 @@ const cors = require('cors');
 const app = express();
 const db = new sqlite3.Database('./database.db');
 
+// Cria tabela de usuários, se não existir
+db.run(`CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,
+    email TEXT UNIQUE,
+    senha TEXT,
+    role TEXT DEFAULT 'user'
+)`, (err) => {
+    if (err) {
+        // Se der erro ao criar a tabela, o console vai avisar
+        console.error("Erro ao criar tabela 'usuarios':", err.message);
+    } else {
+        // Se der certo, ele também avisa
+        console.log("Tabela 'usuarios' verificada/criada com sucesso.");
+    }
+});
+//db.run("UPDATE usuarios SET role = 'admin' WHERE email = 'arthur11maduro@gmail.com'");
+
+
 app.use(bodyParser.json());
 app.use(cors());
 
-// Cria tabela de usuários, se não existir
 
-db.run(`CREATE TABLE IF NOT EXISTS usuarios (
- id INTEGER PRIMARY KEY AUTOINCREMENT,
- nome TEXT,
- email TEXT UNIQUE,
- senha TEXT,
- role TEXT DEFAULT 'user' 
-)`);
 
 // Rota de cadastro
 app.post('/register', async (req, res) => {
@@ -46,6 +57,8 @@ app.post("/login", (req, res) => {
     db.get("SELECT * FROM usuarios WHERE email = ?", [email], (err, row) => {
         if (err) return res.status(500).json({ erro: err.message });
         if (!row) return res.status(401).json({ erro: "Usuário não encontrado" });
+        console.log("ROLE DO USUARIO:", row.role);
+
 
         bcrypt.compare(senha, row.senha, (err, resultado) => {
             if (!resultado) return res.status(401).json({ erro: "Senha inválida" });
@@ -104,6 +117,6 @@ app.delete('/usuario/:id', autenticarToken, somenteAdmin, (req, res) => {
     });
 });
 
-db.run("UPDATE usuarios SET role = 'admin' WHERE email = 'arthur12maduro@gmail.com'");
+
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
