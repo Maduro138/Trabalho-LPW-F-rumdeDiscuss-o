@@ -1,3 +1,44 @@
 #Bemvindo{
     font-size: smaller;
 }
+#menu{
+    text-align: center;
+     
+  background: linear-gradient(to right, #34b1de, #c7f1ef); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent; 
+  -webkit-text-fill-color: transparent;
+    font-size: 55px;
+    font-family: "Chakra Petch", sans-serif;
+}
+#link{
+    text-align: center;
+    margin-bottom: 60px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+}
+#link a {
+    padding-left: 20px;
+
+    text-decoration: none;
+    color: rgb(129, 137, 143);
+}
+#link a:hover {
+    text-decoration: underline;
+}
+h1{
+    font-family: "Chakra Petch", sans-serif;
+}
+#Dica{
+
+
+
+}
+body{
+    color: white;
+    background-color: black;
+}
+p{
+    font-family: "Istok Web", sans-serif ;
+}
