@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (Bemvindo) {
     Bemvindo.textContent = `Bem vindo ${nomedousuario} :)`;
+    login = "";
   }
 
   else {
