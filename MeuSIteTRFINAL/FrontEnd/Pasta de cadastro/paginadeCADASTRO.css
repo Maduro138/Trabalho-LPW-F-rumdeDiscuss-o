@@ -89,3 +89,14 @@ transition: all 0.9s ease-in-out, width 0.3s linear 0.1s;
     text-decoration: underline;
     transform: scale(1.2);
 }
+#mostrarSenha{
+    border: 4px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+#mostrarConfirmacao{
+    border: 4px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: -15px;
+}
