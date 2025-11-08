@@ -4,22 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let login = document.getElementById("login");
   let nomedousuario = localStorage.getItem("nomedousuario");
 
-  if (nomedousuario) {
-    nomedousuario = nomedousuario.trim();
-    
+  //Lógica para o nome do suario que irá aparecer na tela
+  if (nomedousuario ===true) {
+    nomedousuario = nomedousuario.trim();   
   } 
   
   if (nomedousuario === null) {
     nomedousuario = "Convidado";
-    
-  }
-
-  if (Bemvindo) {
     Bemvindo.textContent = `Bem vindo ${nomedousuario} :)`;
-    login = "";
+
+  }
+  else{
+    Bemvindo.textContent = `Bem vindo ${nomedousuario} :)`
+    login.textContent = ""
   }
 
-  else {
-      login = "";
-    }
+
 });
