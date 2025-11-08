@@ -1,138 +1,61 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aprenda C — Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="paginaINICIAL.css">
 </head>
 <body>
-  <div >
+  <header>
     <aside>
       <div>
-        <!--<div class="logo">C</div> -->
         <h1 id="Bemvindo"></h1>
-        <header id="menu">
-        <h2>Portal C — Básico ao Avançado</h2>
+        <h2 id="menu">Portal C — Básico ao Avançado</h2>
       </div>
-      <nav id="link">
-        <a href="#home" class="navlink active" data-target="home">Início</a>
-        <a href="#tutorial" class="navlink" data-target="tutorial">Tutorial Rápido</a>
-        <a href="#exemplos" class="navlink" data-target="exemplos">Exemplos</a>
-        <a href="#referencia" class="navlink" data-target="referencia">Referência</a>
-        <a href="#login" id="login" data-target="login">Login</a>
-      </nav>
+      <ul class="links">
+        <li><a href="#home" class="navlink active" data-target="home">Início</a></li>
+        <li><a href="#tutorial" class="navlink" data-target="tutorial">Tutorial Rápido</a></li>
+        <li><a href="#exemplos" class="navlink" data-target="exemplos">Exemplos</a></li>
+        <li><a href="#referencia" class="navlink" data-target="referencia">Referência</a></li>
+        <li id="LOGIN"><a href="/MeuSIteTRFINAL/FrontEnd/Pasta de login/paginadeLOGIN.html" id="login" data-target="login">Login</a></li>
+      </ul>
       <div id="Dica">
-        <!--<strong>Dica:</strong>
-        <p>Use o painel à direita para ler conteúdo, copiar exemplos e testar localmente.</p>-->
-      </div>
+        </div>
     </aside>
-</header>
-    <main>
+  </header>
 
-      <header class="mainhead">
-        <div>
-          <h1 id="aprendaC" >Aprenda C</h1>
-          
-          <p>Entenda a linguagem C com exemplos claros e exercícios práticos.</p>
-        </div>
-        <div>
-          <small>Temática: estética do seu login — cartão marrom sobre fundo roxo</small>
-        </div>
-      </header>
+  <main>
+    <header class="mainhead">
+      <div>
+        <h1 id="aprendaC">Aprenda C</h1>
+        <p>Entenda a linguagem C com exemplos claros e exercícios práticos.</p>
+      </div>
+      <div>
+        <small>Temática: estética do seu login — cartão marrom sobre fundo roxo</small>
+      </div>
+    </header>
 
-      <section >
-        <div>
-          <h3 id="oqueé" >O que é C?</h3>
-          <p>C é uma linguagem de programação de propósito geral, criada nos anos 70. É rápida, próxima ao hardware e é a base para muitas outras linguagens.</p>
-        </div>
+    <section>
+      <div>
+        <h3 id="oqueé">O que é C?</h3>
+        <p>C é uma linguagem de programação de propósito geral, criada nos anos 70. É rápida, próxima ao hardware e é a base para muitas outras linguagens.</p>
+      </div>
+      <div>
+        <h3 id="porque">Por que aprender C?</h3>
+        <ul>
+          <li>Controle baixo de memória (ponteiros).</li>
+          <li>Base para sistemas operacionais, compiladores e embarcados.</li>
+          <li>Excelente para aprender conceitos fundamentais.</li>
+        </ul>
+      </div>
+    </section>
 
-        <div>
-          <h3 id="porque" >Por que aprender C?</h3>
-          <ul>
-            <li>Controle baixo de memória (ponteiros).</li>
-            <li>Base para sistemas operacionais, compiladores e embarcados.</li>
-            <li>Excelente para aprender conceitos fundamentais.</li>
-          </ul>
-        </div>
-      </section>
-
-   <!-- Usar isso na página da aula 1
-       <section>
-        <div>
-          <h3>Estrutura mínima de um programa em C</h3>
-          <pre><code>#include &lt;stdio.h&gt;
-
-int main(void) {
-    printf("Olá, mundo!\n");
-    return 0;
-}</code></pre>
-          <p>Salve em <code>ola.c</code> e compile com <code>gcc ola.c -o ola</code>.</p>
-        </div>
-
-        <div>
-          <h3>Variáveis e Tipos</h3>
-          <pre><code>int idade = 20;
-float nota = 8.5;
-char letra = 'A';</code></pre>
-        </div>
-
-        <div>
-          <h3>Ponteiros (exemplo básico)</h3>
-          <pre><code>int x = 10;
-int *p = &x;
-printf("x = %d, *p = %d\n", x, *p);</code></pre>
-        </div>
-      </section>
-
-      <section id="exemplos">
-        <div class="card">
-          <h3>Exemplo: função que soma dois números</h3>
-          <pre><code>#include &lt;stdio.h&gt;
-
-int soma(int a, int b) {
-    return a + b;
-}
-
-int main(void) {
-    printf("3 + 4 = %d\n", soma(3,4));
-    return 0;
-}</code></pre>
-        </div>
-
-        <div>
-          <h3>Exemplo: alocação dinâmica</h3>
-          <pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-int main(void){
-    int n = 5;
-    int *v = malloc(n * sizeof(int));
-    if(!v) return 1;
-    for(int i=0;i<n;i++) v[i] = i*i;
-    free(v);
-    return 0;
-}</code></pre>
-        </div>
-      </section>
-        </div>
-      </section>
     </main>
-  </div>
--->
+
   <script src="paginaINICIAL.js"></script>
-</body>
-</html>
 </body>
 </html>

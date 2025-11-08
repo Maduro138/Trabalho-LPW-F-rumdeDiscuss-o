@@ -12,21 +12,47 @@
     font-size: 55px;
     font-family: "Chakra Petch", sans-serif;
 }
-#link{
-    text-align: center;
-    margin-bottom: 60px;
-  font-family: "Orbitron", sans-serif;
+.links{
+ 
+    list-style: none;
+    margin: -8px;
+    padding: 2px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+
+
   font-size: 20px;
 }
-#link a {
+
+ .links li {
+  font-family: "Orbitron", sans-serif;
+    margin: -8px;
+    margin-top: 10px;
+    padding-bottom: 9px;
+    padding-right: 55px;
+    }
+
+.links a {
     padding-left: 20px;
 
     text-decoration: none;
     color: rgb(129, 137, 143);
 }
-#link a:hover {
+.links a:hover {
     text-decoration: underline;
 }
+ .links li a {
+        display: inline-block;
+      transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+        .links a {
+
+      transform: translateY(15px);
+      opacity: 0;
+    }
 h1{
     font-family: "Chakra Petch", sans-serif;
 }
@@ -78,3 +104,46 @@ h3 {
     0%, 100% { border-color: transparent; }
     50% { border-color: white; }
 }
+.links li:nth-child(1) a { animation-delay: 0.2s; }
+
+.links li:nth-child(2) a { animation-delay: 0.4s; }
+
+.links li:nth-child(3) a { animation-delay: 0.6s; }
+
+.links li:nth-child(4) a { animation-delay: 0.8s; }
+
+.links li:nth-child(5) a { animation-delay: 1s; }
+
+.links li a {
+        display: inline-block;
+      transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    body.fadeout {
+  opacity: 0;
+
+}
+
+body.fadein {
+  opacity: 1;
+
+}
+ body.fadein .links a {
+
+  animation: anim 0.6s forwards;
+
+}
+ @keyframes anim {
+
+  from {
+
+    opacity: 0;
+    transform: translateY(15px);
+
+   }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+
+   }
+
+ }

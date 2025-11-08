@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
+  document.body.classList.add('fadein');
   let Bemvindo = document.getElementById("Bemvindo");
   let login = document.getElementById("login");
+  let LOGIN = document.getElementById("LOGIN")
   let nomedousuario = localStorage.getItem("nomedousuario");
 
   //Lógica para o nome do suario que irá aparecer na tela
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   else{
     Bemvindo.textContent = `Bem vindo ${nomedousuario} :)`
     login.textContent = ""
+    LOGIN.remove()
   }
 
 
