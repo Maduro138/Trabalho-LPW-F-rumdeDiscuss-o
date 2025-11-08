@@ -42,3 +42,39 @@ body{
 p{
     font-family: "Istok Web", sans-serif ;
 }
+
+
+h3 {
+    text-align: center;
+    font-size: 40px; 
+    color: #5e6ad1; 
+    width: 300px;
+    border: 5px #24257c25;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #24257c25;
+    border-radius: 10px;
+    margin-left: auto;
+     font-family: "Chakra Petch", sans-serif;
+    margin-right: auto;
+}
+
+#aprendaC {
+
+    border-right: 4px solid white;
+    width: 9ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: digitar 2s steps(9), piscar 0.5s step-end infinite alternate;
+}
+    
+@keyframes digitar {
+    from { width: 0; }
+    to { width: 9ch; }
+}
+
+@keyframes piscar {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: white; }
+}

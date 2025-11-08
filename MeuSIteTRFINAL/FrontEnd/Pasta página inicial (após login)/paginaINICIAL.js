@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
   } 
   
-  if (nomedousuario === "") {
+  if (nomedousuario === null) {
     nomedousuario = "Convidado";
     
   }
