@@ -23,6 +23,25 @@ db.run(`CREATE TABLE IF NOT EXISTS usuarios (
         console.log("Tabela 'usuarios' verificada/criada com sucesso.");
     }
 });
+// Tabela de tópicos do fórum
+db.run(`CREATE TABLE IF NOT EXISTS topicos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT,
+    conteudo TEXT,
+    autor TEXT,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
+)`);
+
+// Tabela de respostas dos tópicos
+db.run(`CREATE TABLE IF NOT EXISTS respostas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topico_id INTEGER,
+    autor TEXT,
+    conteudo TEXT,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (topico_id) REFERENCES topicos(id)
+)`);
+
 //db.run("UPDATE usuarios SET role = 'admin' WHERE email = 'arthur11maduro@gmail.com'");
 
 
@@ -77,6 +96,65 @@ app.post("/login", (req, res) => {
         });
     });
 });
+// Criar um tópico
+app.post('/topicos', (req, res) => {
+    const { titulo, conteudo, autor } = req.body;
+
+    db.run(`INSERT INTO topicos (titulo, conteudo, autor) VALUES (?, ?, ?)`,
+    [titulo, conteudo, autor],
+    function(err){
+        if(err){
+            return res.json({erro: err.message});
+        }
+        res.json({status: "ok", id: this.lastID});
+    });
+});
+
+// Listar todos tópicos
+app.get('/topicos', (_req, res) => {
+    db.all(`SELECT id, titulo, autor, data_criacao FROM topicos ORDER BY id DESC`, [], (err, rows)=>{
+        if(err){
+            return res.json({erro: err.message});
+        }
+        res.json(rows);
+    });
+});
+
+// Pegar um tópico pelo ID e listar respostas dele msm
+app.get('/topicos/:id', (req, res) => {
+    const topico_id = req.params.id;
+
+    db.get(`SELECT * FROM topicos WHERE id = ?`, [topico_id], (err, topico)=>{
+        if(err){
+            return res.json({erro: err.message});
+        }
+        if(!topico){
+            return res.json({erro: "tópico não encontrado"});
+        }
+
+        db.all(`SELECT * FROM respostas WHERE topico_id = ? ORDER BY id DESC`, [topico_id], (err, respostas)=>{
+            if(err){
+                return res.json({erro: err.message});
+            }
+            res.json({topico, respostas});
+        });
+    });
+});
+
+// Criar respostas
+app.post('/respostas', (req, res) => {
+    const { topico_id, autor, conteudo } = req.body;
+
+    db.run(`INSERT INTO respostas (topico_id, autor, conteudo) VALUES (?, ?, ?)`,
+    [topico_id, autor, conteudo],
+    function(err){
+        if(err){
+            return res.json({erro: err.message});
+        }
+        res.json({status: "ok", id: this.lastID});
+    });
+});
+
 //Rota adm
 function autenticarToken(req, res, next) {
     const authHeader = req.headers['authorization'];

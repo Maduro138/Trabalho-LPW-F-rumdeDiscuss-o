@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dúvidas? Entre aqui — Criar tópico</title>
+<link rel="stylesheet" href="ForumdeDUVIDAS.css">
+</head>
+<body>
+<header class="topbar small">
+<h1 class="logo">Digite sua dúvida</h1>
+<nav>
+<a href="listaostopicos.html" class="btn ghost">← Voltar</a>
+</nav>
+</header>
+
+
+<main class="container">
+<section class="card form-card">
+<h2>Criar novo tópico</h2>
+<label>Título</label>
+<input id="titulo" placeholder="Ex: Como resolver equações quadráticas?" />
+
+
+<label>Conteúdo</label>
+<textarea id="conteudo" rows="8" placeholder="Explique sua dúvida com detalhes..."></textarea>
+
+
+<div class="actions">
+<button id="btn-criar" class="btn">Publicar tópico</button>
+</div>
+</section>
+</main>
+
+
+<script src="ForumdeDUVIDAS.js"></script>
+<script>
+document.getElementById("btn-criar").onclick = criarTopico;
+</script>
+</body>
+</html>

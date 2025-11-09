@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dúvidas? Entre aqui — Tópicos</title>
+<link rel="stylesheet" href="ForumdeDUVIDAS.css">
+</head>
+<body>
+<header class="topbar">
+<h1 class="logo">Canal Fórum</h1> <h1 id="Bemvindo"></h1>
+<nav>
+<a href="criartopico.html" class="btn">+ Novo tópico</a>
+<a href="/MeuSIteTRFINAL/FrontEnd/Pasta página inicial (após login)/PáginaINICIAL.html" class="btn ghost">Voltar ao site</a>
+</nav>
+</header>
+
+
+<main class="container">
+<section class="search-area">
+<input id="search" placeholder="Pesquisar tópicos (título)" />
+</section>
+
+
+<section id="listaTopicos" class="lista"></section>
+
+
+<div id="empty" class="empty">Nenhum tópico encontrado.</div>
+</main>
+
+
+<script src="ForumdeDUVIDAS.js"></script>
+<script>
+// inicializa a página
+carregarTopicos();
+
+</script>
+</body>
+</html>

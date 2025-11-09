@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dúvidas? Entre aqui — Tópico</title>
+<link rel="stylesheet" href="ForumdeDUVIDAS.css">
+</head>
+<body>
+<header class="topbar small">
+<h1 class="logo">Dúvidas? Entre aqui</h1>
+<nav>
+<a href="listaostopicos.html" class="btn ghost">← Voltar</a>
+</nav>
+</header>
+
+
+<main class="container">
+    <article class="card">
+        <h2 id="tituloTopico"></h2>
+        <p id="conteudoTopico"></p>
+        <small>Autor: <span id="autorTopico"></span></small>
+    </article>
+
+    <section id="listaRespostas" class="respostas"></section>
+
+    <section class="responder card">
+        <h3>Enviar resposta</h3>
+        <textarea id="textoResposta" placeholder="Digite sua resposta"></textarea>
+        <div class="actions">
+            <button id="btn-responder" class="btn">Responder</button>
+        </div>
+    </section>
+</main>
+
+
+
+<script src="ForumdeDUVIDAS.js"></script>
+<script>
+carregarTopico();
+document.getElementById("btn-responder").onclick = enviarResposta;
+</script>
+</body>
+</html>
