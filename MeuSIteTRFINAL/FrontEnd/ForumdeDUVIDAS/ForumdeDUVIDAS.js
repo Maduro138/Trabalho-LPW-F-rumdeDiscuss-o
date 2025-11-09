@@ -58,7 +58,7 @@ async function criarTopico(){
 }
 
 
-// --- ver tópicos e as respostas ---
+// ver tópicos e as respostas 
 async function carregarTopico(){
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
