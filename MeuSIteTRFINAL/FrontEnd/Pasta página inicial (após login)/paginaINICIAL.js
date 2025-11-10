@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   else{
     Bemvindo.textContent = `Bem vindo ${nomedousuario} :)`
     login.href = "/MeuSIteTRFINAL/FrontEnd/Pasta de login/paginadeLOGIN.html"
-    LOGIN.textContent= "Logout"
+    login.textContent= "Logout" 
   }
 
 
