@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   else{
     Bemvindo.textContent = `Bem vindo ${nomedousuario} :)`
-    login.textContent = ""
-    LOGIN.remove()
+    login.href = "/MeuSIteTRFINAL/FrontEnd/Pasta de login/paginadeLOGIN.html"
+    LOGIN.textContent= "Logout"
   }
 
 
