@@ -46,9 +46,13 @@
 display: inline-block;
 transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 .links a {
 transform: translateY(15px);
 opacity: 0;
+}
+.links a:hover{
+      transform: scale(1.3);
 }
 h1{
     font-family: "Chakra Petch", sans-serif;
