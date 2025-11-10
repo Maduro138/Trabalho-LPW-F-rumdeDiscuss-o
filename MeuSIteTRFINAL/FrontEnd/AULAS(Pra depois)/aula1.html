@@ -1,11 +1,199 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aula 1 • Introdução à Linguagem C</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    
+ 
+    <header class="cabecalho">
+        <h1>Aula 1 — Introdução à Linguagem C</h1>
+          Objetivos: entender o que é C, estrutura básica, compilar/executar e usar printf/scanf.
+    </header>
+
+    <section>
+      <h2>1. O que é C</h2>
+      <p>
+        <strong>C</strong> é uma linguagem de programação criada por Dennis Ritchie (1972) nos Bell Labs.
+        É compacta, eficiente e base para muitas outras linguagens (C++, Java, C#). Muito usada em sistemas,
+        embarcados e software de alto desempenho.
+      </p>
+      <ul >
+        <li>Características: performance, controle de memória (ponteiros), sintaxe concisa.</li>
+        <li>Onde aparece: sistemas operacionais, drivers, firmware, jogos, bibliotecas.</li>
+      </ul>
+    </section>
+
+    <div>
+      <main>
+        <section>
+          <h2>2. Estrutura básica de um programa em C</h2>
+          <p>Exemplo mínimo e explicação linha a linha.</p>
+
+          <div>
+            <strong>Exemplo: Olá, mundo!</strong>
+            <div>
+              <button class="botao" data-copiar="#codigo1">Copiar</button>
+              <a class="botao vazio" href="https://replit.com/" target="_blank" rel="noopener">
+                Testar online
+              </a>
+            </div>
+          </div>
+
+          <pre id="codigo1"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Olá, mundo!\n");
+    return 0;
+}</code></pre>
+
+          <table class="tabela">
+            <tr><th>Elemento</th><th>Função</th></tr>
+            <tr><td><code>#include &lt;stdio.h&gt;</code></td><td>Inclui biblioteca para entrada/saída (<code>printf</code>, <code>scanf</code>).</td></tr>
+            <tr><td><code>int main()</code></td><td>Função principal — ponto de entrada do programa.</td></tr>
+            <tr><td><code>printf(...)</code></td><td>Imprime texto no terminal. <code>\n</code> é nova linha.</td></tr>
+            <tr><td><code>return 0;</code></td><td>Indica término sem erros.</td></tr>
+          </table>
+
+          <p class="dica">Compilar (GCC): <code>gcc programa.c -o programa</code> — executar: <code>./programa</code></p>
+        </section>
+
+        <section>
+          <h2>3. <code>printf</code> e formatação</h2>
+          <p><code>printf</code> imprime texto com especificadores de formato.</p>
+
+          <pre id="codigo2"><code>
+int a = 10;
+float b = 3.14;
+printf("Inteiro: %d\n", a);
+printf("Real: %.2f\n", b);
+printf("Caractere: %c\n", 'A');
+printf("Texto: %s\n", "Olá");</code></pre>
+
+          <p>Principais especificadores: <code>%d</code> (int), <code>%f</code> (float/double), <code>%c</code> (char), <code>%s</code> (string).</p>
+        </section>
+
+        <section>
+          <h2>4. Entrada: <code>scanf</code></h2>
+          <p>Use <code>scanf</code> para ler dados do usuário — lembre-se do <code>&</code> para variáveis (exceto arrays).</p>
+
+          <div class="titulo-exemplo">
+            <strong>Exemplo: ler nome e idade</strong>
+            <div>
+              <button class="botao" data-copiar="#codigo3">Copiar</button>
+              <a class="botao vazio" href="https://replit.com/" target="_blank" rel="noopener">
+                Testar online
+              </a>
+            </div>
+          </div>
+
+          <pre id="codigo3"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char nome[50];
+    int idade;
+
+    printf("Digite seu nome: ");
+    scanf("%49s", nome);       // %s lê até o primeiro espaço
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    printf("Olá %s, você tem %d anos.\n", nome, idade);
+    return 0;
+}</code></pre>
+
+          <p class="dica">
+            Observação: <code>scanf("%s", nome)</code> lê até o primeiro espaço;
+            para ler linhas com espaços use <code>fgets</code> (ou funções adicionais).
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Comentários e erros comuns</h2>
+          <p>Comentários:</p>
+          <pre><code>// comentário de uma linha
+/* comentário
+   de várias linhas */</code></pre>
+
+          <p>Erros comuns:</p>
+          <ul>
+            <li>Esquecer ponto e vírgula <code>;</code>.</li>
+            <li>Não incluir <code>&lt;stdio.h&gt;</code> antes de usar <code>printf</code>/<code>scanf</code>.</li>
+            <li>Esquecer <code>&</code> em <code>scanf</code> para variáveis escalares.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>6. Exercício resolvido</h2>
+          <p>Peça o nome e a idade e imprima: <em>Olá [nome], você tem [idade] anos!</em></p>
+
+          <pre id="codigo4"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char nome[80];
+    int idade;
+
+    printf("Digite seu nome: ");
+    scanf("%79s", nome);
+
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    printf("Olá %s, você tem %d anos!\n", nome, idade);
+    return 0;
+}</code></pre>
+
+        <section>
+          <h2>7. Exercícios propostos</h2>
+          <div class="lista-exercicios">
+            <div>1. Exiba seu nome completo e o curso que faz.</div>
+            <div>2. Leia dois inteiros e imprima a soma.</div>
+            <div>3. Leia sua idade e diga quantos anos faltam para 100.</div>
+            <div>4. Imprima exatamente:
+              <pre><code>Aprender C é divertido!</code></pre>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section>
+          <h2>Resumo rápido</h2>
+          <p>O que lembrar</p>
+          <ul>
+            <li>Programa começa em <code>int main()</code>.</li>
+            <li>Use <code>printf</code> para saída e <code>scanf</code> para entrada.</li>
+            <li>Toda instrução termina com <code>;</code>.</li>
+            <li>Inclua <code>&lt;stdio.h&gt;</code> para entrada e saída básicas.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Links úteis</h2>
+          <ul>
+            
+            <li><a href="https://www.onlinegdb.com/online_c_compiler">OnlineGDB (compilar online)</a></li>
+            <li><a href="https://www.programiz.com/c/online-compiler">Programiz (compilador online)</a></li>
+             <li><a href="https://replit.com/">Replit</a></li>
+          </ul>
+        </section>
+
+        <section class="dica" >
+          <h2>Boas práticas</h2>
+          <ul>
+            <li>Nomeie variáveis de forma clara.</li>
+            <li>Comente trechos complexos.</li>
+            <li>Teste com valores limites.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script src="aula1.js"></script>
 </body>
 </html>
+
