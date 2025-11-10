@@ -1,2 +1,9 @@
 # Trabalho-LPW-ForumdeDiscussao
 This is a repository destined to my work of LPW. The group includes: Cristiano Amorim, Arthur Maduro, Benício Lares and Eduardo Andrade
+
+Integrantes:
+Arthur Maduro
+Benício
+Cristiano Amorim
+Eduardo Andrade
+
