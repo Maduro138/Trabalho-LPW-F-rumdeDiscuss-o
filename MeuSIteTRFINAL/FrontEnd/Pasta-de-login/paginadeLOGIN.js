@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (data.role === 'admin') {
     // Se for admin, vai para a pasta ADM
     alert("Login de administrador bem-sucedido!");   
-    window.location.href = "../Pasta página inicial (após login)/PastaADM/adm.html"; 
+    window.location.href = "../Pasta-pagina-inicial-apos-login/PastaADM/adm.html";
     
 } else {
     // Se for usuário comum, vai para a página inicial
     alert("Login bem-sucedido!");
-    window.location.href = "../Pasta página inicial (após login)/PáginaINICIAL.html";
+    window.location.href = "../Pasta-pagina-inicial-apos-login/PaginaINICIAL.html";
 }
 
             } else {

@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 alert(resultado);
                 numerodeusuarios++;
-                window.location.href = "../Pasta de login/paginadeLOGIN.html";
+                window.location.href = "../Pasta-de-login/paginadeLOGIN.html";
             } else {
                 alert("Erro no cadastro: " + resultado);
             }

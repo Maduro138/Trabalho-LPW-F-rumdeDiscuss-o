@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // se não tiver token, manda o usuário de volta para o login
     if (!token) {
         alert("Acesso negado. Faça login como administrador.");
-        window.location.href = "../PáginaINICIAL.html"; 
+        window.location.href = "../PaginaINICIAL.html"; 
         return;
     }
 
@@ -33,7 +33,7 @@ async function buscarUsuarios(token) {
             // se o token for inválido ou o usuário não for admin
             alert("Erro: " + data.erro);
             // Manda de volta para a página inicial, hehehehe
-             window.location.href = "../PáginaINICIAL.html";
+             window.location.href = "../PaginaINICIAL.html";
         }
 
     } catch (error) {
