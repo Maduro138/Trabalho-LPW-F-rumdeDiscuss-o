@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aula 2 • Variáveis, Tipos e Operadores (C)</title>
+  <link rel="stylesheet" href="aula2.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <h1 class="titulo-principal">Aula 2 — Variáveis, Tipos e Operadores (C)</h1>
+    <p class="subtitulo">Aprendendo a guardar valores e fazer operações</p>
+  </header>
+
+  <main class="conteudo-principal">
+
+    <section class="secao secao-conceitos">
+      <h2 class="titulo-secao">O que é uma variável?</h2>
+      <p class="texto">
+        Variáveis são nomes que usamos para guardar valores na memória do computador.
+        Cada variável tem um <strong>tipo</strong> que diz que tipo de valor ela armazena (inteiro, real, caractere, etc.).
+      </p>
+    </section>
+
+    <section class="secao secao-tipos">
+      <h2 class="titulo-secao">Tipos básicos em C</h2>
+      <ul class="lista-explicacao">
+        <li><span class="palavra-chave">int</span> — números inteiros (ex: -2, 0, 10).</li>
+        <li><span class="palavra-chave">float</span> — números com casas decimais (ex: 3.14).</li>
+        <li><span class="palavra-chave">double</span> — float com maior precisão.</li>
+        <li><span class="palavra-chave">char</span> — um único caractere (ex: 'A').</li>
+      </ul>
+    </section>
+
+    <section class="secao secao-declaracao">
+      <h2 class="titulo-secao">Declarar e inicializar variáveis</h2>
+      <p class="texto">Declaração: ao criar a variável você diz seu tipo e nome. Inicialização: você dá um valor inicial.</p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo1" class="codigo-c">
+int idade;            // declara a variável 'idade' do tipo inteiro
+int ano = 2025;       // declara e inicializa
+float nota = 8.5;     // número com casas decimais
+char letra = 'A';     // caractere
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo1">Copiar</button>
+      </div>
+
+      <p class="texto dica">Observação: em C cada instrução termina com ponto e vírgula <code>;</code>.</p>
+    </section>
+
+    <section class="secao secao-printf">
+      <h2 class="titulo-secao">&nbsp;Formatadores e printf</h2>
+      <p class="texto">Para mostrar variáveis com <code>printf</code> usamos especificadores:</p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo2" class="codigo-c">
+int a = 5;
+float b = 2.5;
+char c = 'Z';
+
+printf("a = %d\n", a);      // %d para inteiros
+printf("b = %.2f\n", b);    // %f para reais (%.2f = 2 casas)
+printf("c = %c\n", c);      // %c para caractere
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo2">Copiar</button>
+      </div>
+    </section>
+
+    <section class="secao secao-operadores">
+      <h2 class="titulo-secao">Operadores</h2>
+      <p class="texto">
+        Operadores aritméticos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (resto).
+        Operadores relacionais: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+      </p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo3" class="codigo-c">
+int x = 7, y = 3;
+int soma = x + y;      // 10
+int prod = x * y;      // 21
+int divi = x / y;      // 2  (divisão inteira)
+int resto = x % y;     // 1  (resto da divisão)
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo3">Copiar</button>
+      </div>
+    </section>
+
+    <section class="secao secao-casting">
+      <h2 class="titulo-secao">Conversão de tipos (casting)</h2>
+      <p class="texto">Para evitar divisão inteira, convertemos para float:</p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo4" class="codigo-c">
+int a = 5, b = 2;
+float resultado = (float)a / b;  // 2.5
+printf("Resultado = %.2f\n", resultado);
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo4">Copiar</button>
+      </div>
+    </section>
+
+    <section class="secao secao-exercicios">
+      <h2 class="titulo-secao">Exercícios</h2>
+      <ol class="lista-exercicios">
+        <li>Declare variáveis para armazenar <em>idade</em>, <em>altura</em> e <em>inicial do nome</em>.</li>
+        <li>Leia dois inteiros e imprima a soma, a diferença e o produto.</li>
+        <li>Leia dois números inteiros e mostre sua divisão com duas casas decimais (use casting).</li>
+        <li>Explique com palavras a diferença entre <code>float</code> e <code>double</code>.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Material Aula 2 — Variáveis, Tipos e Operadores • Curso C</p>
+  </footer>
+
+  <script src="aulas.js"></script>
+</body>
+</html>
