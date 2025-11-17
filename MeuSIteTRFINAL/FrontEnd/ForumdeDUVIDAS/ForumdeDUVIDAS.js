@@ -31,7 +31,15 @@ function abrirTopico(id){
 // Cria os tópicos:
 async function criarTopico(){
     const titulo = document.getElementById("titulo").value;
+    if (titulo ==="") {
+        alert("Digite um título para o tópico");
+        return
+    }
     const conteudo = document.getElementById("conteudo").value;
+        if (conteudo ==="") {
+        alert("Digite um conteudo para o tópico");
+        return
+    }
 
     if(!usuario){
         alert("Você precisa estar logado para postar.");
