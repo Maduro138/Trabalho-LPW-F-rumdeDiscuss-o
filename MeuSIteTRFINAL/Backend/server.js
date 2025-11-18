@@ -196,26 +196,34 @@ app.delete('/usuario/:id', autenticarToken, somenteAdmin, (req, res) => {
         res.send("Usuário apagado com sucesso!");
     });
 });
+  //INFERNOOOOOOOO
 app.post("/run", async (req, res) => {
     const codigo = req.body.code;
 
     if (!codigo) {
-        return res.status(400).json({ error: "Código vazio." });
+        return res.status(400).json({ error: "Código vazio" });
     }
 
-    // Cria arquivo temporário
     const id = crypto.randomBytes(8).toString("hex");
     const arquivo = `temp_${id}.c`;
     fs.writeFileSync(arquivo, codigo);
 
+    let caminhoWindows = path.resolve(arquivo);
+
+    let caminhoDocker = caminhoWindows
+    .replace(/\\/g, "/") // troca \ por /
+    .replace(/^([A-Za-z]):/, function (_, letra) {
+        return "/" + letra.toLowerCase();
+    });
+
     const comando = `
         docker run --rm -i \
-        -v ${path.join(process.cwd(), arquivo)}:/codigo.c \
+        -v "${caminhoDocker}":/codigo.c \
         gcc:latest sh -c "gcc /codigo.c -o /codigo.out && /codigo.out"
     `;
 
     exec(comando, { timeout: 8000 }, (err, stdout, stderr) => {
-        fs.unlinkSync(arquivo); // remove o arquivo, ele pode estar contaminado
+        fs.unlinkSync(arquivo);
 
         if (err) {
             return res.json({ output: stderr || "Erro ao compilar." });
@@ -224,6 +232,7 @@ app.post("/run", async (req, res) => {
         res.json({ output: stdout });
     });
 });
+
 
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
