@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Mostra a lista de requisitos
     paragrafodasenha.innerHTML = `
  <ul>
-     <li style="color:${req.tamanho ? 'green' : 'red'}">mínimo 8 caracteres</li>
- <li style="color:${req.minuscula ? 'green' : 'red'}">uma letra minúscula</li>
-     <li style="color:${req.maiuscula ? 'green' : 'red'}">uma letra maiúscula</li>
-     <li style="color:${req.numero ? 'green' : 'red'}">um número</li>
-     <li style="color:${req.especial ? 'green' : 'red'}">caractere especial</li>
- <li style="color:${(senha === confirm && senha !== '') ? 'green' : 'red'}">senhas iguais</li>
+     <li style="color:${req.tamanho ? 'green' : 'red'}">Mínimo 8 caracteres</li>
+ <li style="color:${req.minuscula ? 'green' : 'red'}">Uma letra minúscula</li>
+     <li style="color:${req.maiuscula ? 'green' : 'red'}">Uma letra maiúscula</li>
+     <li style="color:${req.numero ? 'green' : 'red'}">Um número</li>
+     <li style="color:${req.especial ? 'green' : 'red'}">Caractere especial</li>
+ <li style="color:${(senha === confirm && senha !== '') ? 'green' : 'red'}">Senhas devem ser iguais</li>
    </ul>
  `
 
