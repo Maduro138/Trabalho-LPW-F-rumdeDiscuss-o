@@ -1,103 +1,182 @@
-body {
-    background-color: rgb(37, 25, 68);
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    min-height: 100vh; 
-    margin: 0; 
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-#Centro{
 
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    padding: 30px; 
-    border: 4px solid #fff; 
-    border-radius: 20px;
-    background-color: rgb(80, 62, 48);
-    color: white; 
-    max-width: 90%; 
-    width: 400px; 
+html, body {
+  height: 100%;
+  font-family: "Istok Web", "Chakra Petch", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #071022 0%, #062033 100%);
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+#Centro {
+  width: 100%;
+  max-width: 520px;
+  margin: 48px auto;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(2,6,10,0.6);
 }
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-h1{
-    color: white;
-    text-align: center;
-}
-label{
-    color: rgb(245, 245, 245);
-    margin: 10px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-}
-input{
-    padding: 8px;
-    border: 2px solid black; 
-    border-radius: 20px;
-    margin-top: 5px; 
-    width: 80%; 
-    max-width: 300px; 
-}
-#nome, #email, #senha{
 
+#Centro h1 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #dff6fb;
+  letter-spacing: 0.2px;
 }
-#botaodelogin{
-    padding: 10px 20px; 
-    border: 3px solid black; 
-    border-radius: 10px;
-    color: black;
-    margin-top: 20px; 
-    cursor: pointer;
-    transition: all 0.5s ease-in-out
+
+form h1 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #9fb0bc;
+  font-weight: 500;
 }
-#barradeFORCA{
-width:200px; 
-height:10px; 
-background:#ccc;
-border: 1px solid black;
-border-radius:5px; 
-margin-top:10px;
-transition: all;
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  color: #cfeaf2;
+  font-size: 14px;
 }
-#barraINTERNA{
-height:10px; 
-width:0%; 
-border-radius:5px;
-transition: all 0.9s ease-in-out, width 0.3s linear 0.1s;
+
+label input[type="text"],
+label input[type="password"],
+label input[type="email"]{
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.25);
+  color: #e6f7fb;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
 }
-#textoFORCA{
-    font-weight:bold;
-    transition: all 0.5s ease-in-out, width 0.3s linear 0.1s;
+
+label input[type="text"]::placeholder,
+label input[type="password"]::placeholder {
+  color: #9fb0bc;
 }
-#fazercadastro{
-    
+
+label input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 6px 18px rgba(6,182,212,0.08);
 }
-#linkpraLOGIN{
-    text-decoration: none;
-    color: rgb(192, 160, 119);
-    transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+label {
+  position: relative;
 }
-#linkpraLOGIN:hover{
-    text-decoration: underline;
-    transform: scale(1.2);
-}
+
 #mostrarSenha{
-    border: 4px;
-    border-radius: 20px;
-    margin-top: 10px;
+   position: absolute;
+  right: 10px;
+  top: calc(50% + 13px);
+  transform: translateY(-50%);
+  background: transparent;
+  color: #06b6d4;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
 }
-#mostrarConfirmacao{
-    border: 4px;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-bottom: -15px;
+#mostrarConfirmacao {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + -22px);
+  transform: translateY(-50%);
+  background: transparent;
+  color: #06b6d4;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+#mostrarSenha:hover,
+#mostrarConfirmacao:hover {
+  background: rgba(6,182,212,0.06);
+}
+
+#barradeFORCA {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  margin: 8px 0 6px 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+#barraINTERNA {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff6b6b, #ffd166, #06b6d4);
+  transition: width 240ms ease;
+}
+
+#textoFORCA {
+  color: #9fb0bc;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+#fazercadastro {
+  color: #cfeaf2;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+#fazercadastro a {
+  color: #06b6d4;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#fazercadastro a:hover {
+  text-decoration: underline;
+}
+
+#botaodelogin {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(180deg, #06b6d4, #045e6b);
+  color: #022;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(2,6,10,0.5);
+  transition: transform .08s ease, box-shadow .12s ease;
+}
+
+#botaodelogin:hover {
+  transform: translateY(-3px);
+}
+
+#paragrafodasenha {
+  color: #ffb4b4;
+  font-size: 13px;
+  min-height: 18px;
+  margin-top: 6px;
+}
+
+@media (max-width: 520px) {
+  #Centro {
+    padding: 18px;
+    margin: 20px;
+  }
 }
