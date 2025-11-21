@@ -1,7 +1,14 @@
 const API = "http://localhost:3000";
-const usuario = localStorage.getItem("nomedousuario");
+let usuario = localStorage.getItem("nomedousuario");
 let Bemvindo = document.getElementById("Bemvindo");
-Bemvindo.textContent=`Oi ${usuario} ^-^`
+
+    if (usuario === null) {
+        usuario = "Convidado";
+        Bemvindo.textContent=`Oi ${usuario} ^-^`
+
+    }
+    else{ Bemvindo.textContent=`Oi ${usuario} ^-^`
+    }
 // Lista de tópicos:
 async function carregarTopicos(){
     const r = await fetch(API + "/topicos");
