@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+  <title>Aula 3 • Estruturas Condicionais (C)</title>
+  <link rel="stylesheet" href="aula3.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <h1 class="titulo-principal">Aula 3 — Estruturas Condicionais (C)</h1>
+    <p class="subtitulo">Aprenda a tomar decisões no seu programa</p>
+  </header>
+
+  <main class="conteudo-principal">
+
+    <section class="secao secao-conceitos">
+      <h2 class="titulo-secao">O que são estruturas condicionais?</h2>
+      <p class="texto">
+        Estruturas condicionais permitem que o programa escolha caminhos diferentes conforme uma condição (verdadeira/falsa).
+        As principais em C são <code>if</code>, <code>else if</code>, <code>else</code> e <code>switch</code>.
+      </p>
+    </section>
+
+    <section class="secao secao-if">
+      <h2 class="titulo-secao">if / else</h2>
+      <p class="texto">Use <code>if</code> para executar código quando a condição for verdadeira; <code>else</code> para o caso contrário.</p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo1" class="codigo-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    if (idade >= 18) {
+        printf("Você é maior de idade.\n");
+    } else {
+        printf("Você é menor de idade.\n");
+    }
+    return 0;
+}
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo1">Copiar</button>
+      </div>
+    </section>
+
+    <section class="secao secao-elseif">
+      <h2 class="titulo-secao">else if (múltiplas condições)</h2>
+      <p class="texto">Para verificar várias condições em sequência use <code>else if</code>.</p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo2" class="codigo-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int nota;
+    printf("Digite a nota (0-100): ");
+    scanf("%d", &nota);
+
+    if (nota >= 90) {
+        printf("A\n");
+    } else if (nota >= 80) {
+        printf("B\n");
+    } else if (nota >= 70) {
+        printf("C\n");
+    } else {
+        printf("Reprovado\n");
+    }
+    return 0;
+}
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo2">Copiar</button>
+      </div>
+    </section>
+
+    <section class="secao secao-switch">
+      <h2 class="titulo-secao">switch / case</h2>
+      <p class="texto">Use <code>switch</code> quando quiser comparar uma variável com vários valores constantes.</p>
+
+      <div class="bloco-codigo">
+        <pre id="codigo3" class="codigo-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int dia;
+    printf("Digite o número do dia (1=Dom,2=Seg,...7=Sab): ");
+    scanf("%d", &dia);
+
+    switch (dia) {
+      case 1: printf("Domingo\n"); break;
+      case 2: printf("Segunda\n"); break;
+      case 3: printf("Terça\n"); break;
+      case 4: printf("Quarta\n"); break;
+      case 5: printf("Quinta\n"); break;
+      case 6: printf("Sexta\n"); break;
+      case 7: printf("Sábado\n"); break;
+      default: printf("Número inválido\n"); break;
+    }
+    return 0;
+}
+        </pre>
+        <button class="botao-copiar" data-copiar="#codigo3">Copiar</button>
+      </div>
+    </section>
+
+    <section class="secao secao-boaspraticas">
+      <h2 class="titulo-secao">Boas práticas</h2>
+      <ul class="lista-explicacao">
+        <li>Coloque chaves {} mesmo para blocos de uma linha — melhora leitura e evita erros.</li>
+        <li>Use <code>break</code> nos <code>case</code> do <code>switch</code> para evitar "fall-through" indesejado.</li>
+        <li>Prefira condições claras e curtas; se necessário, use funções auxiliares.</li>
+      </ul>
+    </section>
+
+    <section class="secao secao-exercicios">
+      <h2 class="titulo-secao">Exercícios</h2>
+      <ol class="lista-exercicios">
+        <li>Leia um número inteiro e informe se ele é positivo, negativo ou zero.</li>
+        <li>Escreva um programa que leia a idade e informe a categoria: <code>criança</code> (&lt;12), <code>adolescente</code> (12–17), <code>adulto</code> (18–64), <code>idoso</code> (&ge;65).</li>
+        <li>Faça um menu com <code>switch</code> que receba uma opção (1–3) e mostre uma mensagem diferente para cada opção; trate opção inválida.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Material Aula 3 — Estruturas Condicionais • Curso C</p>
+  </footer>
+
+  <script src="aulas.js"></script>
+</body>
+</html>
