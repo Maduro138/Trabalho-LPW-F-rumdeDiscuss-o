@@ -21,9 +21,7 @@
     display: flex;
     justify-content: center;
     border-radius: 10px;
-
-
-  font-size: 20px;
+    font-size: 20px;
 }
 
  .links li {
@@ -70,7 +68,7 @@ overflow-x: hidden;
 height:100%;
 margin:0;
 background:radial-gradient(1200px 600px at 10% 13%, rgba(155,89,255,0.06), transparent),
-linear-gradient(180deg, rgba(0,0,0,0.6), rgba(7,16,22,1));color:#dfeeff
+linear-gradient(180deg, rgba(0,0,0,0.6), rgba(7,16,22,1));color:#959697
 }
 p{
     font-family: "Istok Web", sans-serif ;
