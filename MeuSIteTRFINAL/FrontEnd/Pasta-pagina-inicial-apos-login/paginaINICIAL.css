@@ -62,17 +62,18 @@ h1{
 
 }
 html,body{
-margin: 0;
-padding: 0;
-overflow-x: hidden;
-height:100%;
-margin:0;
-background:radial-gradient(1200px 600px at 10% 13%, rgba(155,89,255,0.06), transparent),
-linear-gradient(180deg, rgba(0,0,0,0.6), rgba(7,16,22,1));color:#959697
+ 
+  margin: 0;
+  background: linear-gradient(#071022 , #062033);
+  color: #e6f3f8;
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  
+  
 }
 p{
     font-family: "Istok Web", sans-serif ;
     padding-left: 15px;
+    margin: 10px 10px;
 }
 
 
