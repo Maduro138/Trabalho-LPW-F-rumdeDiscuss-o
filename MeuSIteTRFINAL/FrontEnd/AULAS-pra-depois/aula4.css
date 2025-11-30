@@ -1,0 +1,89 @@
+* { box-sizing: border-box; }
+
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(#071022, #062033);
+  color: #e6f3f8;
+  font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  padding: 28px 16px;
+}
+
+main, header, footer {
+  width: 100%;
+  max-width: 980px;
+  margin: auto;
+}
+
+.cabecalho {
+  margin-bottom: 20px;
+}
+
+.titulo-principal {
+  margin: 0;
+  font-size: 26px;
+}
+
+.subtitulo {
+  margin: 2px 0 0;
+  color: #9fb0bc;
+}
+
+.secao {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 20px rgba(2,6,10,0.45);
+}
+
+.titulo-secao {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.lista-explicacao,
+.lista-exercicios {
+  padding-left: 20px;
+  color: #9fb0bc;
+}
+
+.bloco-codigo {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+
+.codigo-c {
+  background: #001a26;
+  color: #dff6fb;
+  padding: 14px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 260px;
+  border: 1px solid rgba(255,255,255,0.06);
+  font-family: monospace;
+  overflow: auto;
+}
+
+.botao-copiar {
+  background: #06b6d4;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #022;
+}
+
+.rodape {
+  margin-top: 20px;
+  text-align: center;
+  color: #9fb0bc;
+}
