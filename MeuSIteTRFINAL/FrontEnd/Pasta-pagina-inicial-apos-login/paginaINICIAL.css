@@ -1,4 +1,4 @@
-#Bemvindo{
+/*#Bemvindo{
     font-size: smaller;
     padding-left: 12px;
 }
@@ -145,4 +145,128 @@ body.fadein {
  }
  #vamoscomecar{
   margin-left: 15px;
- }
+ }*/
+
+ html, body {
+  margin: 0;
+  background: #131a24;
+  color: #e6edf3;
+  font-family: "Inter", sans-serif;
+}
+header {
+  padding: 25px 0;
+  box-shadow: 0 2px 8px #0004;
+}
+.links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+.links li a {
+  color: #a5b3c2;
+  text-decoration: none;
+  font-size: 19px;
+  position: relative;
+  padding: 6px 4px;
+  transition: .3s;
+}
+.links li a:hover {
+  color: #e6edf3;
+}
+.links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #6a99f1;
+  transition: width .3s;
+}
+.links li a:hover::after {
+  width: 100%;
+}
+#aprendaC {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  margin-left: 15px;
+  background: linear-gradient(to right, #4f8cff, #9bb2ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  border-right: none;
+  animation: none;
+}
+.mainhead p {
+  margin-left: 15px;
+  color: #a5b3c2;
+  font-size: 18px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+section div {
+  background: #161b22;
+  padding: 30px;
+  width: 350px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #0005;
+  border: 1px solid #ffffff08;
+  transition: .3s;
+}
+section div:hover {
+  transform: translateY(-6px);
+  border-color: #4f8cff22;
+  box-shadow: 0 0 25px #0007;
+}
+h3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 28px;
+  color: #6198ff;
+  text-align: center;
+  margin-bottom: 15px;
+  background: none;
+  border: none;
+}
+p, li {
+  color: #a5b3c2;
+  line-height: 1.6;
+}
+#vamoscomecar a,
+main p a {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #4f8cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 0 12px #4f8cff55;
+  transition: 0.3s;
+}
+#vamoscomecar a:hover,
+main p a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #4f8cff99;
+}
+#menu {
+  margin: auto;
+  text-align: center;
+  font-size: 55px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.eu {
+   display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#Bemvindo {
+  font-size: smaller;
+  padding-left: 12px;
+}
