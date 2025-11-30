@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 4 • Operadores em C</title>
+  <link rel="stylesheet" href="estilo-aula4.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <h1 class="titulo-principal">Aula 4 — Operadores em C</h1>
+  <p class="subtitulo">Aprenda a usar operadores aritméticos, relacionais e lógicos.</p>
+</header>
+
+<main class="conteudo-principal">
+
+  <section class="secao">
+    <h2 class="titulo-secao">1. Operadores Aritméticos</h2>
+    <p>Aritméticos realizam contas básicas.</p>
+
+    <ul class="lista-explicacao">
+      <li><code>+</code> Soma</li>
+      <li><code>-</code> Subtração</li>
+      <li><code>*</code> Multiplicação</li>
+      <li><code>/</code> Divisão</li>
+      <li><code>%</code> Resto da divisão inteira (módulo)</li>
+    </ul>
+
+    <div class="bloco-codigo">
+      <pre id="codigo1" class="codigo-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 3;
+    printf("Soma: %d\n", a + b);
+    printf("Subtração: %d\n", a - b);
+    printf("Multiplicação: %d\n", a * b);
+    printf("Divisão: %d\n", a / b);
+    printf("Resto: %d\n", a % b);
+    return 0;
+}
+      </pre>
+      <button class="botao-copiar" data-copiar="#codigo1">Copiar</button>
+    </div>
+  </section>
+
+  <section class="secao">
+    <h2 class="titulo-secao">2. Operadores Relacionais</h2>
+    <p>Usados para comparar valores. Retornam 1 (verdadeiro) ou 0 (falso).</p>
+
+    <ul class="lista-explicacao">
+      <li><code>==</code> Igual</li>
+      <li><code>!=</code> Diferente</li>
+      <li><code>&gt;</code> Maior</li>
+      <li><code>&lt;</code> Menor</li>
+      <li><code>&gt;=</code> Maior ou igual</li>
+      <li><code>&lt;=</code> Menor ou igual</li>
+    </ul>
+
+    <div class="bloco-codigo">
+      <pre id="codigo2" class="codigo-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 5, y = 8;
+    printf("%d\n", x > y);
+    printf("%d\n", x == 5);
+    printf("%d\n", y != 3);
+    return 0;
+}
+      </pre>
+      <button class="botao-copiar" data-copiar="#codigo2">Copiar</button>
+    </div>
+  </section>
+
+  <section class="secao">
+    <h2 class="titulo-secao">3. Operadores Lógicos</h2>
+    <p>Usados para criar condições compostas.</p>
+
+    <ul class="lista-explicacao">
+      <li><code>&&</code> E lógico</li>
+      <li><code>||</code> OU lógico</li>
+      <li><code>!</code> Negação</li>
+    </ul>
+
+    <div class="bloco-codigo">
+      <pre id="codigo3" class="codigo-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 20;
+    int habilitacao = 1;
+
+    if (idade >= 18 && habilitacao == 1) {
+        printf("Pode dirigir.\n");
+    } else {
+        printf("Não pode dirigir.\n");
+    }
+    return 0;
+}
+      </pre>
+      <button class="botao-copiar" data-copiar="#codigo3">Copiar</button>
+    </div>
+  </section>
+
+  <section class="secao">
+    <h2 class="titulo-secao">4. Precedência dos Operadores</h2>
+    <p>Ordem em que as operações são executadas:</p>
+
+    <ul class="lista-explicacao">
+      <li><strong>1º</strong> <code>()</code> Parênteses</li>
+      <li><strong>2º</strong> <code>!</code></li>
+      <li><strong>3º</strong> <code>*</code>, <code>/</code>, <code>%</code></li>
+      <li><strong>4º</strong> <code>+</code>, <code>-</code></li>
+      <li><strong>5º</strong> Relacionais</li>
+      <li><strong>6º</strong> <code>&&</code></li>
+      <li><strong>7º</strong> <code>||</code></li>
+    </ul>
+  </section>
+
+  <section class="secao">
+    <h2 class="titulo-secao">5. Exercícios</h2>
+    <ol class="lista-exercicios">
+      <li>Leia dois números e mostre todas as operações aritméticas entre eles.</li>
+      <li>Leia a idade de uma pessoa e diga se ela pode votar e/ou dirigir.</li>
+      <li>Faça um programa que receba um número e diga se ele está entre 10 e 50 usando operadores lógicos.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <p>Aula 4 — Operadores em C • Curso Técnico</p>
+</footer>
+
+<script src="aulas.js"></script>
+</body>
+</html>
