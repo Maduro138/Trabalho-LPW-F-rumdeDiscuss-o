@@ -118,3 +118,8 @@ main, header, footer {
   .bloco-codigo { flex-direction: column; }
   .codigo-c { max-width: 100%; min-width: 100%; }
 }
+#Voltarpginicial{
+  color: #88a2a7;
+  text-decoration: none;
+  text-shadow: #001a26;
+}
