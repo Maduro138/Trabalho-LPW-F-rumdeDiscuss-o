@@ -134,4 +134,3 @@ async function enviarResposta(){
         alert("Erro ao enviar resposta");
     }
 }
-
