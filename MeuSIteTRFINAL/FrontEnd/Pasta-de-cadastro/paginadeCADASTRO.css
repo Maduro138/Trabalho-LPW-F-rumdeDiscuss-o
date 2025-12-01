@@ -13,9 +13,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 #Centro {
-  width: 100%;
-  max-width: 520px;
+  width: min(90%, 520px); 
   margin: 48px auto;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.04);
@@ -25,75 +25,48 @@ html, body {
 }
 
 #Centro h1 {
-  font-size: 22px;
+  font-size: clamp(18px, 4vw, 22px);
   margin-bottom: 12px;
   color: #dff6fb;
-  letter-spacing: 0.2px;
 }
 
 form h1 {
-  font-size: 16px;
+  font-size: clamp(14px, 3.5vw, 16px);
   margin-bottom: 14px;
   color: #9fb0bc;
-  font-weight: 500;
 }
+
 
 label {
   display: block;
   margin-bottom: 12px;
   color: #cfeaf2;
-  font-size: 14px;
+  font-size: clamp(13px, 3vw, 14px);
+  position: relative;
 }
 
 label input[type="text"],
 label input[type="password"],
 label input[type="email"]{
-  display: block;
   width: 100%;
   margin-top: 8px;
-  padding: 10px 12px;
+  padding: clamp(9px, 3vw, 12px);
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.04);
   background: rgba(0,0,0,0.25);
   color: #e6f7fb;
-  font-size: 14px;
-  outline: none;
+  font-size: clamp(13px, 3.2vw, 14px);
   transition: box-shadow .12s ease, border-color .12s ease;
 }
 
-label input[type="text"]::placeholder,
-label input[type="password"]::placeholder {
-  color: #9fb0bc;
-}
 
-label input:focus {
-  border-color: #06b6d4;
-  box-shadow: 0 6px 18px rgba(6,182,212,0.08);
-}
 
-label {
-  position: relative;
-}
-
-#mostrarSenha{
-   position: absolute;
-  right: 10px;
-  top: calc(50% + 13px);
-  transform: translateY(-50%);
-  background: transparent;
-  color: #06b6d4;
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 6px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 13px;
-}
+#mostrarSenha,
 #mostrarConfirmacao {
   position: absolute;
   right: 10px;
-  top: calc(50% + -22px);
-  transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-10%);
   background: transparent;
   color: #06b6d4;
   border: 1px solid rgba(255,255,255,0.06);
@@ -102,12 +75,17 @@ label {
   cursor: pointer;
   font-weight: 600;
   font-size: 13px;
+}
+
+#mostrarConfirmacao {
+  top: calc(50% + -22px);
 }
 
 #mostrarSenha:hover,
 #mostrarConfirmacao:hover {
   background: rgba(6,182,212,0.06);
 }
+
 
 #barradeFORCA {
   width: 100%;
@@ -132,10 +110,12 @@ label {
   margin-bottom: 10px;
 }
 
+
 #fazercadastro {
   color: #cfeaf2;
   font-size: 14px;
   margin-top: 8px;
+  text-align: center;
 }
 
 #fazercadastro a {
@@ -151,13 +131,13 @@ label {
 #botaodelogin {
   width: 100%;
   margin-top: 12px;
-  padding: 12px 14px;
+  padding: clamp(10px, 3vw, 14px);
   border-radius: 10px;
   border: none;
   background: linear-gradient(180deg, #06b6d4, #045e6b);
   color: #022;
   font-weight: 700;
-  font-size: 15px;
+  font-size: clamp(14px, 3.2vw, 16px);
   cursor: pointer;
   box-shadow: 0 10px 26px rgba(2,6,10,0.5);
   transition: transform .08s ease, box-shadow .12s ease;
@@ -174,9 +154,35 @@ label {
   margin-top: 6px;
 }
 
+
 @media (max-width: 520px) {
   #Centro {
     padding: 18px;
-    margin: 20px;
+    margin: 20px auto;
+  }
+
+  #mostrarSenha,
+  #mostrarConfirmacao {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  #Centro {
+    margin: 14px auto;
+    padding: 16px;
+  }
+
+  label {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 330px) {
+  #mostrarSenha,
+  #mostrarConfirmacao {
+    right: 4px;
+    padding: 3px 4px;
   }
 }
