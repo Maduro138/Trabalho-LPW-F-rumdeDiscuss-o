@@ -1,4 +1,4 @@
-body {
+ body {
     margin: 0;
     padding: 0;
     background: #0f0f0f;
@@ -7,14 +7,14 @@ body {
     text-align: center;
 }
 
-/* TÍTULO */
+
 h1 {
     margin-top: 40px;
     font-size: 45px;
     text-shadow: 0 0 10px #6d63ff;
 }
 
-/* LISTA DE COLABORADORES */
+
 .nomes {
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ h1 {
     box-shadow: 0 0 25px rgba(120, 120, 255, 0.7);
 }
 
-/* IMAGEM + LINK DO GITHUB */
+
 .nomes li p {
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ h1 {
     text-shadow: 0 0 10px #7f85ff;
 }
 
-/* FOOTER */
+
 footer {
     margin-top: 50px;
     padding: 20px;
@@ -79,4 +79,112 @@ footer {
 
 footer p {
     margin: 10px 0;
+}
+
+.btn-modal {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 22px;
+    font-family: "Pixelify Sans", sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #6d63ff;
+    color: white;
+    box-shadow: 0 0 12px #6d63ff;
+    transition: 0.2s;
+}
+
+.btn-modal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #8e86ff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 0 25px rgba(120,120,255,0.6);
+    border: 2px solid rgba(120,120,255,0.4);
+    animation: aparecer 0.25s ease-out;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h2 {
+    color: #9aa0ff;
+    text-shadow: 0 0 10px #8785ff;
+    margin-top: 0;
+}
+
+.lista-modal {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.lista-modal li {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 12px 0;
+    box-shadow: 0 0 10px rgba(120,120,255,0.35);
+}
+
+.lista-modal li p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.lista-modal img {
+    width: 32px;
+    filter: drop-shadow(0 0 5px #8582ff);
+}
+
+.lista-modal a {
+    color: #9aa0ff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.lista-modal a:hover {
+    color: #c7c9ff;
+    text-shadow: 0 0 10px #c7c9ff;
+}
+
+.btn-fechar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #6d63ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Pixelify Sans";
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 0 12px #6d63ff;
+    transition: 0.2s;
+}
+
+.btn-fechar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #8e86ff;
 }
