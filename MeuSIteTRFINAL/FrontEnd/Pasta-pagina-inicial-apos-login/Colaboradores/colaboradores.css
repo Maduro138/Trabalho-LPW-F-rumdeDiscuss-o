@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #0f0f0f;
+    font-family: "Pixelify Sans", sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* TÍTULO */
+h1 {
+    margin-top: 40px;
+    font-size: 45px;
+    text-shadow: 0 0 10px #6d63ff;
+}
+
+/* LISTA DE COLABORADORES */
+.nomes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.nomes ol {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+}
+
+.nomes li {
+    background: #1a1a1a;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(120, 120, 255, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nomes li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(120, 120, 255, 0.7);
+}
+
+/* IMAGEM + LINK DO GITHUB */
+.nomes li p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.nomes li img {
+    width: 40px;
+    height: 40px;
+}
+
+.nomes li a {
+    color: #9aa0ff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.nomes li a:hover {
+    color: #c7c9ff;
+    text-shadow: 0 0 10px #7f85ff;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #111;
+    border-top: 2px solid #444;
+}
+
+footer p {
+    margin: 10px 0;
+}

@@ -123,3 +123,17 @@ main, header, footer {
   text-decoration: none;
   text-shadow: #001a26;
 }
+.botao-aula4 {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #06b6d4;
+  color: #022;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .08s ease, box-shadow .12s ease;
+  box-shadow: 0 8px 20px rgba(2,6,10,0.45);
+  margin-top: 12px;
+}
