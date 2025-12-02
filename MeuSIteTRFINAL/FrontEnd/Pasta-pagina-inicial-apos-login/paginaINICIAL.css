@@ -290,7 +290,6 @@ p, li {
 main p a {
   display: inline-block;
   padding: 14px 28px;
-  background: #4f8cff;
   color: white;
   text-decoration: none;
   border-radius: 12px;
@@ -321,4 +320,13 @@ main p a:hover {
 #duvidas{
   color: white;
   text-decoration: none;
+}
+#vamoscomecar{
+  display: flex;
+  
+}
+.be {
+
+  justify-content: center;
+
 }
