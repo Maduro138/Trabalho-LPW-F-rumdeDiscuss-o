@@ -1,11 +1,76 @@
-#lista-usuarios{
-    text-align: center;
-    background-color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: rgb(80, 62, 48) ;
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+    color: #e0e8f0;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-li{
-    padding-bottom:30px;
-    padding-top: 30px;
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #f1faee;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #a8dadc;
+}
+
+
+#lista-usuarios {
+    list-style: none;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+#lista-usuarios li {
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    transition: 0.25s ease;
+    font-size: 1.1rem;
+}
+
+#lista-usuarios li:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateX(5px);
+}
+
+p {
+    margin-top: 30px;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 18px;
+    background: #1d3557;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.25s ease;
+    display: inline-block;
+}
+
+a:hover {
+    background: #457b9d;
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(255,255,255,0.3);
 }

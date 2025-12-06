@@ -12,9 +12,30 @@ $(document).ready(function () {
   } else {
     $("#Bemvindo").text(`Bem vindo ${nomedousuario} :)`);
     $("#login")
-      .attr("href", "/FrontEnd/Pasta-de-login/paginadeLOGIN.html")
+      .attr("href", "/MeuSIteTRFINAL/FrontEnd/Pasta-de-login/paginadeLOGIN.html")
       .text("Logout");
   }
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fadein");
+
+    // aplicar fadeout ao trocar de página
+    document.querySelectorAll("a").forEach(a => {
+        // ignorar links que começam com #
+        if (a.getAttribute("href")?.startsWith("#")) return;
+
+        a.addEventListener("click", e => {
+            e.preventDefault();
+            let url = a.href;
+            document.body.classList.remove("fadein");
+            document.body.classList.add("fadeout");
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 400); 
+        });
+    });
 });
 

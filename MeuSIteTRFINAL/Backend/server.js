@@ -43,8 +43,6 @@ db.run(`CREATE TABLE IF NOT EXISTS respostas (
     FOREIGN KEY (topico_id) REFERENCES topicos(id)
 )`);
 
-//db.run("UPDATE usuarios SET role = 'admin' WHERE email = 'arthur11maduro@gmail.com'");
-
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -211,7 +209,7 @@ app.post("/run", async (req, res) => {
     let caminhoWindows = path.resolve(arquivo);
 
     let caminhoDocker = caminhoWindows
-    .replace(/\\/g, "/") // troca \ por /
+    .replace(/\\/g, "/") 
     .replace(/^([A-Za-z]):/, function (_, letra) {
         return "/" + letra.toLowerCase();
     });

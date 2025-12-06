@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Roll</title>
+    <title>Colab</title>
     <link rel="stylesheet" href="colaboradores.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,48 +15,44 @@
 </head>
 <body class="fadeout">
 
-    <h1> Colaborações  </h1>
+<button class="btn-modal" onclick="abrirModal()">Ver Colaboradores</button>
 
-    <div id="P">
-           <p>
-        Este site foi feito em colaboração de :  
-    </p>
-    </div>
+<div id="modalColaboradores" class="modal">
+    <div class="modal-content">
+        <h2>Colaboradores</h2>
 
-<div class="nomes">
-     <ol> 
+        <ol class="lista-modal">
 
+            <li><strong>Arthur Maduro</strong>
+                <p><img src="Imagens/icons8-github-100[1].png">
+                <a href="https://github.com/Maduro138">GitHub</a></p>
+            </li>
 
+            <li><strong>Cristiano Amorim</strong>
+                <p><img src="Imagens/icons8-github-100[1].png">
+                <a href="https://github.com/cristianoamorim09">GitHub</a></p>
+            </li>
 
-        <li><strong>Arthur Maduro</strong>
-        <p><img src="Imagens/icons8-github-100[1].png" alt="Logogithub"> <a href="https://github.com/Maduro138"> Visite meu github </a></p>
-        </li>
+            <li><strong>Eduardo Andrade</strong>
+                <p><img src="Imagens/icons8-github-100[1].png">
+                <a href="https://github.com/edu12508">GitHub</a></p>
+            </li>
 
+            <li><strong>Benício Lares</strong>
+                <p><img src="Imagens/icons8-github-100[1].png">
+                <a href="https://github.com/laresbenicio085">GitHub</a></p>
+            </li>
 
-        <li><strong>Cristiano Amorim</strong>
-        <p><img src="Imagens/icons8-github-100[1].png" alt="Logogithub"> <a href="https://github.com/cristianoamorim09"> Visite meu github </a></p>
-        </li>
+            <li><strong>William Sallum</strong>
+                <p><img src="Imagens/icons8-github-100[1].png">
+                <a href="https://github.com/willsallum">GitHub</a></p>
+            </li>
 
+        </ol>
 
-        <li><strong>Eduardo Andrade</strong>
-        <p><img src="Imagens/icons8-github-100[1].png" alt="Logogithub"> <a href="https://github.com/edu12508"> Visite meu github </a></p>
-        </li>
-
-
-        <li><strong>Benício Lares</strong>
-        <p><img src="Imagens/icons8-github-100[1].png" alt="Logogithub"> <a href="https://github.com/laresbenicio085"> Visite meu github </a></p>
-        </li>
-
-
-         <li> <strong>William Sallum</strong>
-        <p><img src="Imagens/icons8-github-100[1].png" alt="Logogithub"> <a href="https://github.com/willsallum"> Visite meu github </a></p>
-        </li>
-
-
-
-</ol>
-
-</div> 
+        <button class="btn-fechar" onclick="fecharModal()">Fechar</button>
+ </div>
+</div>
 
 <footer class="FOoter">
     <p class="AAutores">
@@ -70,6 +66,6 @@
     </p>
 
 </footer>
-    
+    <script src="sallum.js"></script>
 </body>
 </html>
