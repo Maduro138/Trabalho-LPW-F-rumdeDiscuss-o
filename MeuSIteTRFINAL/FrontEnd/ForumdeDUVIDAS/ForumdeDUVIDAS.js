@@ -116,7 +116,10 @@ async function enviarResposta(){
         alert("Você precisa estar logado para responder.");
         return;
     }
-
+    if (conteudo ==="") {
+        alert("Por favor, digite algo no campo de resposta")
+        return
+    }
     const r = await fetch(API + "/respostas", {
         method:"POST",
         headers:{"Content-Type":"application/json"},
